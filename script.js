@@ -16,4 +16,10 @@ function compute()
 
     alert(final_year);
 }
-        
+
+function display_rate(){
+    var rate = document.getElementById("rate").value;
+    var el = document.getElementById("rate-info");
+
+    el.innerHTML = rate + " %";
+}
