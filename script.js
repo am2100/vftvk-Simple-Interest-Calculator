@@ -1,25 +1,36 @@
 function compute()
 {
-    p = document.getElementById("principal").value;
-    r = document.getElementById("rate").value;
-    y = document.getElementById("years").value;
+    p_el = document.getElementById("principal");
+    r_el = document.getElementById("rate");
+    y_el = document.getElementById("years");
 
-    var principal = p;
-    var rate = r;
-    var years = y;
+    result_el = document.getElementById("result");
+
+    var principal = p_el.value;
+    var rate      = r_el.value;
+    var years     = y_el.value;
 
     var interest = principal * years * rate / 100;
 
-    var today = new Date();
-    var this_year = today.getFullYear();
+    var total_return = parseInt(principal) + parseInt(interest);
+
+    var today      = new Date();
+    var this_year  = today.getFullYear();
     var final_year = parseInt(this_year) + parseInt(years);
 
-    alert(final_year);
+    var result_output = "If you deposit <mark>" + principal + "</mark><br>";
+    result_output += "at an interest rate of <mark>" + rate + "%</mark><br>";
+    result_output += "You will receive an amount of <mark>" + total_return + "</mark>,<br>";
+    result_output += "in the year <mark>" + final_year +"</mark>";
+
+    result_el.innerHTML = result_output;
+
+    //alert(result_output);
 }
 
 function display_rate(){
     var rate = document.getElementById("rate").value;
-    var el = document.getElementById("rate-info");
+    var rate_el = document.getElementById("rate-info");
 
-    el.innerHTML = rate + " %";
+    rate_el.innerHTML = rate + " %";
 }
