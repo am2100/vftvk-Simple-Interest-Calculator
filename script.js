@@ -16,7 +16,7 @@ function compute()
     // if not, create an Alert
     // delete existing input value
     // set focus to relevant input field
-    if(principal < 1){
+    if(principal < 1 || principal == ""){
         alert("Enter a positive number");
         p_el.value = "";
         p_el.focus();
