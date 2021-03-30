@@ -11,9 +11,9 @@ function compute()
     var interest = principal * years * rate / 100;
 
     var today = new Date();
-    var this_year = today.getFullYear;
-    var final_year = this_year + years;
+    var this_year = today.getFullYear();
+    var final_year = parseInt(this_year) + parseInt(years);
 
-    alert(principal, rate, years, interest, today, this_year, final_year);
+    alert(final_year);
 }
         
