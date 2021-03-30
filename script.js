@@ -23,8 +23,7 @@ function compute()
     }
     else {
         // Do the necessary calculations
-        var interest = principal * years * rate / 100;
-        var total_return = principal + interest;
+        var total_return = principal * years * rate / 100;
 
         var today      = new Date();
         var this_year  = parseInt(today.getFullYear());
