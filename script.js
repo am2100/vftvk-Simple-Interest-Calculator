@@ -6,26 +6,34 @@ function compute()
 
     result_el = document.getElementById("result");
 
-    var principal = p_el.value;
-    var rate      = r_el.value;
-    var years     = y_el.value;
+    var principal = parseInt(p_el.value);
+    var rate      = parseInt(r_el.value);
+    var years     = parseInt(y_el.value);
 
-    var interest = principal * years * rate / 100;
+    if(principal < 1){
+        alert("Enter a positive number");
+        p_el.value = "";
+        p_el.focus();
+    }
+    else {
 
-    var total_return = parseInt(principal) + parseInt(interest);
+        var interest = principal * years * rate / 100;
 
-    var today      = new Date();
-    var this_year  = today.getFullYear();
-    var final_year = parseInt(this_year) + parseInt(years);
+        var total_return = principal + interest;
 
-    var result_output = "If you deposit <mark>" + principal + "</mark><br>";
-    result_output += "at an interest rate of <mark>" + rate + "%</mark><br>";
-    result_output += "You will receive an amount of <mark>" + total_return + "</mark>,<br>";
-    result_output += "in the year <mark>" + final_year +"</mark>";
+        var today      = new Date();
+        var this_year  = parseInt(today.getFullYear());
+        var final_year = this_year + years;
 
-    result_el.innerHTML = result_output;
+        var result_output = "If you deposit <mark>" + principal + "</mark><br>";
+        result_output += "at an interest rate of <mark>" + rate + "%</mark><br>";
+        result_output += "You will receive an amount of <mark>" + total_return + "</mark>,<br>";
+        result_output += "in the year <mark>" + final_year +"</mark>";
 
-    //alert(result_output);
+        result_el.innerHTML = result_output;
+
+        //alert(result_output);
+    }
 }
 
 function display_rate(){
@@ -34,3 +42,4 @@ function display_rate(){
 
     rate_el.innerHTML = rate + " %";
 }
+
