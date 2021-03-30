@@ -12,7 +12,7 @@ function compute()
     var rate      = parseInt(r_el.value);
     var years     = parseInt(y_el.value);
 
-    // verify principal is greater than 0
+    // verify principal is greater than 0 and not an empty string
     // if not, create an Alert
     // delete existing input value
     // set focus to relevant input field
